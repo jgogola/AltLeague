@@ -1,0 +1,117 @@
+﻿@model LeagueAndCelebrityRosters
+@{
+    ViewData["Title"] = "All Celebrity Rosters";
+}
+
+<style>
+    th {
+        text-align: center;
+    }
+
+    th, td {
+        padding: 0px 6px;
+    }
+
+    .c {
+        text-align: center;
+    }
+
+    .r {
+        text-align: right;
+    }
+
+    .b {
+        font-weight: bold;
+    }
+</style>
+
+
+<h1>@Model.league_CDP.league.league_title</h1>
+Dates: @($"{@Model.league_CDP.league.league_start_date: MM/dd/yyyy}") / @($"{@Model.league_CDP.league.league_end_date: MM/dd/yyyy}")
+<br />
+<label asp-for="@Model.league_CDP.league.is_active_league"></label>
+@(@Model.league_CDP.league.is_active_league ? "Active" : "Closed")
+<br />
+Number of Players: @Model.league_CDP.number_of_players
+<br />
+Number of Celebs: @Model.league_CDP.number_of_celebrities
+<br />
+Average Celeb Age: @Model.league_CDP.average_age
+<br /><br />
+Total Points Available: @Model.league_CDP.total_points_available<br />
+Total Points Wone: @Model.league_CDP.total_points_won
+<br />
+Number of Dead: @Model.league_CDP.number_of_deaths
+<br />
+
+
+
+<p>@TempData["AllPlayerCelebrityUserMsg"]</p>
+
+
+
+@if (Model.player_celebrities.Count > 0)
+{
+    <section title="My Celebrity Roster" style="width: 100%">
+        <table id="tblRoster" class="tblListView display">
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Celebrity</th>
+                    <th>Type</th>
+                    <th>Birth Date</th>
+                    <th>Age</th>
+                    <th>Death Date</th>
+                    <th>Potential Points</th>
+                    <th>Points Won</th>
+                    <th>Action</th>
+                 </tr>
+            </thead>
+            <tbody>
+                @{
+                    var altRow = false;
+                            @foreach (Player_Celebrity player_celebrity in Model.player_celebrities)
+                    {
+                        //@if(player_celebrity.is_winner == false)
+                        //{
+                                <tr style="background-color:@(altRow ? "#fff" : "#E0EBEB");">
+                                    <td class="b">
+                                        @(player_celebrity.player_league.user.full_name)
+                                    </td>
+                                    <td class="b">
+                                        @(player_celebrity.celebrity.celebrity_name)
+                                    </td>
+                                    <td>
+                                        @(player_celebrity.celebrity.lk_celebrity_type.celebrity_type)
+                                    </td>
+                                    <td class="r">
+                                        @($"{player_celebrity.celebrity.birth_date:MM/dd/yyyy}")
+                                    </td>
+                                    <td class="c">
+                                        @(player_celebrity.celebrity.age)
+                                    </td>
+                                    <td class="r">
+                                        @($"{player_celebrity.celebrity.death_date:MM/dd/yyyy}")
+                                    </td>
+                                    <td class="c">
+                                        @(player_celebrity.celebrity.points)
+                                    </td>
+                                    <td class="c">
+                                        @( (player_celebrity.is_winner == true ?  player_celebrity.celebrity.points : 0) )
+                                    </td>
+                                    <td class="c">
+                                        <a class="nav-link text-dark" asp-area="CelebrityDeathPool" asp-controller="Celebrity" asp-action="Edit" asp-route-id="@(player_celebrity.player_celebrity_key)">Edit</a>
+                                    </td>
+                                </tr>
+                        //}
+                        altRow = !altRow;
+                    }
+                }
+            </tbody>
+        </table>
+    </section>
+}
+else
+{
+    <p>No celebrity roster found.</p>
+}

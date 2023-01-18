@@ -1,0 +1,101 @@
+﻿@model List<Player_League_Model>
+
+@{
+    ViewData["Title"] = "My Leagues";
+}
+<h1>@ViewData["Title"]</h1>
+<style>
+    th {
+        text-align: center;
+    }
+
+    th, td {
+        padding: 0px 6px;
+    }
+
+    .c {
+        text-align: center;
+    }
+
+    .r {
+        text-align: right;
+    }
+
+    .b {
+        font-weight: bold;
+    }
+</style>
+
+<a class="nav-link text-dark" asp-area="CelebrityDeathPool" asp-controller="Celebrity" asp-action="Index">Celebrities</a>
+
+@if (Model.Count > 0)
+{
+    <section title="My Leagues" style="width: 100%">
+        <table id="tblLeague" class="tblListView display">
+            <thead>
+                <tr>
+                    <th>League</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>My Rank</th>
+                    <th>League Lead Player</th>
+                    <th>Active</th>
+                    <th>Actions</th>
+                 </tr>
+            </thead>
+            <tbody>
+                @{
+                    var altRow = false;
+                    @foreach (Player_League_Model player_league in Model)
+                    {
+                        <tr style="background-color:@(altRow ? "#fff" : "#E0EBEB");">
+                            <td class="b">
+                                @(player_league.league.league_title)
+                            </td>
+                            <td class="r">
+                                @($"{player_league.league.league_start_date:MM/dd/yyyy}")
+                            </td>
+                            <td class="r">
+                                @($"{player_league.league.league_end_date:MM/dd/yyyy}")
+                            </td>
+                            <td class="c">
+                                @(player_league.player_rank)
+                            </td>
+                            <td>
+                                @(player_league.league_lead_player)
+                            </td>
+                            <td class="c">
+                                @(player_league.league.is_active_league)
+                            </td>
+                            <td class="c">
+                                @switch(player_league.league.lk_league_type.lk_league_type_key)
+                                {
+                                    case (int)League_Type_Enum.Football_Pool:
+                                        <a asp-area="FootballPool" asp-controller="MyCelebrityRoster" asp-action="Index" asp-route-id="@(player_league.league.league_key)">My Roster</a>
+                                        <a asp-area="FootballPool" asp-controller="AllCelebrityRosters" asp-action="Index" asp-route-id="@(player_league.league.league_key)">All Rosters</a>
+                                        break;
+                                    case (int)League_Type_Enum.Survivor_Pool:
+                                        <a asp-area="SurvivorPool" asp-controller="MyCelebrityRoster" asp-action="Index" asp-route-id="@(player_league.league.league_key)">My Roster</a>
+                                        <a asp-area="SurvivorPool" asp-controller="AllCelebrityRosters" asp-action="Index" asp-route-id="@(player_league.league.league_key)">All Rosters</a>
+                                        break;
+                                    case (int)League_Type_Enum.Celebrity_Death_Pool:
+                                        <a asp-area="CelebrityDeathPool" asp-controller="MyCelebrityRoster" asp-action="Index" asp-route-id="@(player_league.league.league_key)">My Roster</a>
+                                        <a asp-area="CelebrityDeathPool" asp-controller="AllCelebrityRosters" asp-action="Index" asp-route-id="@(player_league.league.league_key)">All Rosters</a>
+                                        break;
+                                }
+                              @*  <a asp-area="CelebrityDeathPool" asp-controller="MyCelebrityRoster" asp-action="Index" asp-route-id="@(player_league.league.league_key)">My Roster</a>
+                                <a asp-area="CelebrityDeathPool" asp-controller="AllCelebrityRosters" asp-action="Index" asp-route-id="@(player_league.league.league_key)">All Rosters</a> *@
+                            </td>
+                        </tr>
+
+                        altRow = !altRow;
+                    }
+                }
+            </tbody>
+        </table>
+    </section>
+}
+else
+{
+    <p>No leagues found for you.</p>
+}

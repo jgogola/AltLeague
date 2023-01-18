@@ -1,0 +1,104 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AltLeagueWeb
+build_property.RootNamespace = AltLeagueWeb
+build_property.ProjectDir = C:\_Dev\AltLeague\AltLeagueWeb\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\_Dev\AltLeague\AltLeagueWeb
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Areas/CelebrityDeathPool/Views/AllCelebrityRosters/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2VsZWJyaXR5RGVhdGhQb29sXFZpZXdzXEFsbENlbGVicml0eVJvc3RlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Areas/CelebrityDeathPool/Views/CelebrityType/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2VsZWJyaXR5RGVhdGhQb29sXFZpZXdzXENlbGVicml0eVR5cGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Areas/CelebrityDeathPool/Views/CelebrityType/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2VsZWJyaXR5RGVhdGhQb29sXFZpZXdzXENlbGVicml0eVR5cGVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Areas/CelebrityDeathPool/Views/CelebrityType/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2VsZWJyaXR5RGVhdGhQb29sXFZpZXdzXENlbGVicml0eVR5cGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Areas/CelebrityDeathPool/Views/Celebrity/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2VsZWJyaXR5RGVhdGhQb29sXFZpZXdzXENlbGVicml0eVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Areas/CelebrityDeathPool/Views/Celebrity/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2VsZWJyaXR5RGVhdGhQb29sXFZpZXdzXENlbGVicml0eVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Areas/CelebrityDeathPool/Views/Celebrity/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2VsZWJyaXR5RGVhdGhQb29sXFZpZXdzXENlbGVicml0eVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Areas/CelebrityDeathPool/Views/MyCelebrityRoster/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2VsZWJyaXR5RGVhdGhQb29sXFZpZXdzXE15Q2VsZWJyaXR5Um9zdGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Areas/CelebrityDeathPool/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2VsZWJyaXR5RGVhdGhQb29sXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Areas/CelebrityDeathPool/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2VsZWJyaXR5RGVhdGhQb29sXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Areas/League/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTGVhZ3VlXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Areas/League/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTGVhZ3VlXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Areas/League/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTGVhZ3VlXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Views/Home/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-q3o92dt6ok

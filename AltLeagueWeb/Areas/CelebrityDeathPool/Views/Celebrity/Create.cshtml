@@ -1,0 +1,64 @@
+﻿@model Celebrity
+
+@{
+    ViewData["Title"] = "Add a Celebrity";
+}
+<h1>@ViewData["Title"]</h1>
+<style>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+    .c {
+        text-align: center;
+    }
+
+    .r {
+        text-align: right;
+    }
+
+    .b {
+        font-weight: bold;
+    }
+</style>
+
+<p>@ViewBag.UserMsg</p>
+
+<a class="nav-link text-dark" asp-area="CelebrityDeathPool" asp-controller="Celebrity" asp-action="Index">Celebrities</a>
+
+<form asp-area="CelebrityDeathPool" asp-controller="Celebrity" asp-action="Create" method="post">
+    <fieldset>
+        <legend>Add New Celebrity</legend>
+
+        <div>
+            <label asp-for="celebrity_name"></label>
+            <input type="text" asp-for="celebrity_name" />
+            <span asp-validation-for="celebrity_name"></span>
+        </div>
+
+        <div>
+            <label asp-for="birth_date"></label>
+            <input type="date" asp-for="birth_date" />
+            <span asp-validation-for="birth_date"></span>
+        </div>
+
+        <div>
+            <label asp-for="death_date"></label>
+            <input type="date" asp-for="death_date" />
+            <span asp-validation-for="death_date"></span>
+        </div>
+
+        <div>
+            <label asp-for="lk_celebrity_type_key"></label>
+            <select asp-for="lk_celebrity_type_key" class="form-control" asp-items="@ViewBag.SelectListCelebrityTypes">
+                <option value="0">Select...</option>
+            </select>
+            <span asp-validation-for="lk_celebrity_type_key"></span>
+        </div>
+
+        <div class="btnBar">
+            <input type="submit" value="Save" class="btn-save" />
+        </div>
+    </fieldset>
+</form>
+
+
+
+
