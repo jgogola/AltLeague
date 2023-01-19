@@ -4,17 +4,17 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AltFuture.Areas.CelebrityDeathPool.Services
 {
-    public class PlayerCelebrityRepository : IPlayerCelebrityRepository
+    public class PlayerCelebrityRosterRepository : IPlayerCelebrityRosterRepository
     {
         private readonly SQLService _db;
-        public PlayerCelebrityRepository(ISQLService sqlService)
+        public PlayerCelebrityRosterRepository(ISQLService sqlService)
         {
             _db = (SQLService)sqlService;
         }
 
-        public Player_Celebrity PlayerCelebrityGet(int player_celebrity_key)
+        public Player_Celebrity_Roster PlayerCelebrityRosterGet(int player_celebrity_roster_key)
         {
-            DataTable dt = _db.GetDT("cdp.usp_Player_Celebrity_Get", new List<object> { player_celebrity_key });
+            DataTable dt = _db.GetDT("cdp.usp_Player_Celebrity_Repository_Get", new List<object> { player_celebrity_roster_key });
 
             if (dt.Rows.Count > 0)
             {
@@ -78,9 +78,9 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
                     league = league
                 };
 
-                Player_Celebrity player_celebrity = new Player_Celebrity
+                Player_Celebrity_Roster player_celebrity_roster = new Player_Celebrity_Roster
                 {
-                    player_celebrity_key = (int)dr[""],
+                    player_celebrity_roster_key = (int)dr["player_celebrity_roster_key"],
                     league_key = (int)dr["league_key"],
                     player_league_key = (int)dr["player_league_key"],
                     celebrity_key = (int)dr["celebrity_key"],
@@ -90,16 +90,16 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
 
                 };
 
-                return player_celebrity;
+                return player_celebrity_roster;
             }
 
-            return new Player_Celebrity();
+            return new Player_Celebrity_Roster();
         }
 
-        public List<Player_Celebrity> PlayerCelebrityGetListByPlayer(int competition_key, int user_key)
+        public List<Player_Celebrity_Roster> PlayerCelebrityGetListByPlayer(int competition_key, int user_key)
         {
             DataTable dt = _db.GetDT("cdp.usp_Player_Celebrity_Get_List", new List<object> { competition_key, user_key });
-            List<Player_Celebrity> player_celebrities = new List<Player_Celebrity>();
+            List<Player_Celebrity_Roster> player_celebrities = new List<Player_Celebrity_Roster>();
 
             foreach (DataRow dr in dt.Rows)
             {
@@ -163,7 +163,7 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
                     league = league
                 };
 
-                Player_Celebrity player_celebrity = new Player_Celebrity
+                Player_Celebrity_Roster player_celebrity = new Player_Celebrity_Roster
                 {
                     player_celebrity_key = (int)dr["player_celebrity_key"],
                     league_key = (int)dr["league_key"],
@@ -181,10 +181,10 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
             return player_celebrities;
         }
 
-        public List<Player_Celebrity> PlayerCelebrityGetListByCompetition(int competition_key)
+        public List<Player_Celebrity_Roster> PlayerCelebrityGetListByCompetition(int competition_key)
         {
             DataTable dt = _db.GetDT("cdp.usp_Player_Celebrity_Get_List", new List<object> { competition_key, 0 });
-            List<Player_Celebrity> player_celebrities = new List<Player_Celebrity>();
+            List<Player_Celebrity_Roster> player_celebrities = new List<Player_Celebrity_Roster>();
 
             foreach (DataRow dr in dt.Rows)
             {
@@ -248,7 +248,7 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
                     league = league
                 };
 
-                Player_Celebrity player_celebrity = new Player_Celebrity
+                Player_Celebrity_Roster player_celebrity = new Player_Celebrity_Roster
                 {
                     player_celebrity_key = (int)dr["player_celebrity_key"],
                     league_key = (int)dr["league_key"],
@@ -267,33 +267,33 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
         }
 
 
-        public int PlayerCelebrityAdd(Player_Celebrity player_celebrity)
+        public int PlayerCelebrityRosterAdd(Player_Celebrity_Roster player_celebrity_roster)
         {
-            return _db.GetRetVal("cdp.usp_Player_Celebrity_Add",
+            return _db.GetRetVal("cdp.usp_Player_Celebrity_Roster_Add",
                                     new() {
-                                        player_celebrity.league_key,
-                                        player_celebrity.player_league_key,
-                                        player_celebrity.celebrity_key,
-                                        player_celebrity.is_winner 
+                                        player_celebrity_roster.league_key,
+                                        player_celebrity_roster.player_league_key,
+                                        player_celebrity_roster.celebrity_key,
+                                        player_celebrity_roster.is_winner 
                                     }
                                 );
         }
 
-        public int PlayerCelebrityUpd(int player_celebrity_key, Boolean is_winner)
+        public int PlayerCelebrityRosterUpd(int player_celebrity_roster_key, Boolean is_winner)
         {
-            return _db.GetRetVal("cdp.usp_Player_Celebrity_Upd",
+            return _db.GetRetVal("cdp.usp_Player_Celebrity_Roster_Upd",
                                     new() {
-                                        player_celebrity_key,
+                                        player_celebrity_roster_key,
                                         is_winner
                                     }
                                 );
         }
 
-        public int PlayerCelebrityDel(int player_celebrity_key)
+        public int PlayerCelebrityRosterDel(int player_celebrity_roster_key)
         {
-            return _db.GetRetVal("cdp.usp_Player_Celebrity_Del",
+            return _db.GetRetVal("cdp.usp_Player_Celebrity_Roster_Del",
                                     new() {
-                                        player_celebrity_key
+                                        player_celebrity_roster_key
                                     }
                                 );
         }

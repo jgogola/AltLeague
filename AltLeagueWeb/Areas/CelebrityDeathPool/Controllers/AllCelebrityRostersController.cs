@@ -15,16 +15,16 @@ namespace AltFuture.Areas.CelebrityDeathPool.Controllers
     {
         // private readonly IHttpContextAccessor _contextAccessor;
 
-        private PlayerCelebrityRepository  _playerCelebrityRepository;
+        private PlayerCelebrityRosterRepository  _playerCelebrityRepository;
         private League.Services.LeagueRepository _leagueRepository;
 
 
         public AllCelebrityRostersController(
-            IPlayerCelebrityRepository playerCelebrityRepository,
+            IPlayerCelebrityRosterRepository playerCelebrityRepository,
             League.Services.ILeagueRepository  leagueRepository
         )
         {
-            _playerCelebrityRepository = (PlayerCelebrityRepository)playerCelebrityRepository;
+            _playerCelebrityRepository = (PlayerCelebrityRosterRepository)playerCelebrityRepository;
             _leagueRepository = (League.Services.LeagueRepository)leagueRepository;
         }
 
@@ -38,7 +38,7 @@ namespace AltFuture.Areas.CelebrityDeathPool.Controllers
             LeagueAndCelebrityRosters leagueAndCelebrityRostesr = new LeagueAndCelebrityRosters
             {
                 league_CDP = league_CDP,
-                player_celebrities = new List<Player_Celebrity>()
+                player_celebrities = new List<Player_Celebrity_Roster>()
 
             };
             return View(leagueAndCelebrityRostesr);

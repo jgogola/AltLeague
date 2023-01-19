@@ -1,4 +1,4 @@
-﻿@model List<Player_Celebrity>
+﻿@model List<Player_Celebrity_Roster>
 
 @{
     ViewData["Title"] = "My Celebrity Roster";
@@ -43,7 +43,7 @@
                     <th>Birth Date</th>
                     <th>Age</th>
                     <th>Death Date</th>
-                    <th>Potential Points</th>
+                    <th>Potential Points</th
                     <th>Points Won</th>
                     <th>Action</th>
                  </tr>
@@ -51,7 +51,7 @@
             <tbody>
                 @{
                     var altRow = false;
-                    @foreach (Player_Celebrity player_celebrity in Model)
+                    @foreach (Player_Celebrity_Roster player_celebrity in Model)
                     {
                         //@if(player_celebrity.is_winner == false)
                         //{

@@ -21,7 +21,7 @@ builder.Services.AddScoped<IPlayerLeagueRepository, PlayerLeagueRepository>();
 builder.Services.AddScoped<ILKCelebrityTypeRepository, LKCelebrityTypeRepository>();
 builder.Services.AddScoped<ICelebrityRepository, CelebrityRepository>();
 
-builder.Services.AddScoped<IPlayerCelebrityRepository, PlayerCelebrityRepository > ();
+builder.Services.AddScoped<IPlayerCelebrityRosterRepository, PlayerCelebrityRosterRepository > ();
 
 
 builder.Services.AddSession(options =>

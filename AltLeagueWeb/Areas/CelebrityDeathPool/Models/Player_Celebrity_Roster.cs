@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AltFuture.Areas.CelebrityDeathPool.Models
 {
-    public class Player_Celebrity
+    public class Player_Celebrity_Roster
     {
-        public int player_celebrity_key { get; set; } = 0;
+        public int player_celebrity_roster_key { get; set; } = 0;
 
         [Required]
         [Display(Name = "League")]
@@ -20,7 +20,12 @@ namespace AltFuture.Areas.CelebrityDeathPool.Models
         [Display(Name = "Celebrity")]
         public int celebrity_key { get; set; } = 0;
 
+        [Required]
+        [Display(Name = "Is Winner")]
         public bool is_winner { get; set; } = false;
+
+
+
 
         [ValidateNever]
         public Player_League_Model player_league { get; set; } = new Player_League_Model();

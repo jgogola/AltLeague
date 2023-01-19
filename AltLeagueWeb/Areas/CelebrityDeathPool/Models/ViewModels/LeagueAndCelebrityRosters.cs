@@ -8,6 +8,6 @@ namespace AltFuture.Areas.CelebrityDeathPool.Models.ViewModels
 
         public League_CDP_ViewModel league_CDP = new League_CDP_ViewModel();
 
-        public List<Player_Celebrity> player_celebrities = new List<Player_Celebrity>();
+        public List<Player_Celebrity_Roster> player_celebrities = new List<Player_Celebrity_Roster>();
     }
 }

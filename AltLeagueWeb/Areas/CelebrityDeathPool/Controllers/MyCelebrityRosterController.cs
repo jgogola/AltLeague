@@ -14,14 +14,14 @@ namespace AltFuture.Areas.CelebrityDeathPool.Controllers
     {
         // private readonly IHttpContextAccessor _contextAccessor;
 
-        private PlayerCelebrityRepository  _playerCelebrityRepository;
+        private PlayerCelebrityRosterRepository  _playerCelebrityRepository;
 
 
         public MyCelebrityRosterController(
-            IPlayerCelebrityRepository playerCelebrityRepository
+            IPlayerCelebrityRosterRepository playerCelebrityRepository
         )
         {
-            _playerCelebrityRepository = (PlayerCelebrityRepository)playerCelebrityRepository;
+            _playerCelebrityRepository = (PlayerCelebrityRosterRepository)playerCelebrityRepository;
         }
 
 
@@ -30,7 +30,7 @@ namespace AltFuture.Areas.CelebrityDeathPool.Controllers
         public ActionResult Index(int id)
         {
             int user_key = User.UserKey();
-            List<Player_Celebrity> player_celebrity = _playerCelebrityRepository.PlayerCelebrityGetListByPlayer(id, user_key);
+            List<Player_Celebrity_Roster> player_celebrity = _playerCelebrityRepository.PlayerCelebrityGetListByPlayer(id, user_key);
             return View(player_celebrity);
         }
 
