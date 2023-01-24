@@ -24,11 +24,14 @@ namespace AltFuture.Areas.CelebrityDeathPool.Models
         [Display(Name = "Is Winner")]
         public bool is_winner { get; set; } = false;
 
+        [Display(Name = "Points Won")]
+        public int points_won { get; set; } = 0;
 
 
 
-        [ValidateNever]
-        public Player_League_Model player_league { get; set; } = new Player_League_Model();
+
+        //[ValidateNever]
+        //public Player_League_Model player_league { get; set; } = new Player_League_Model();
 
         [ValidateNever]
         public Celebrity celebrity { get; set; } = new Celebrity();

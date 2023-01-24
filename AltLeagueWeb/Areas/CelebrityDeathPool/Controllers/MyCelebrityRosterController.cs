@@ -30,7 +30,7 @@ namespace AltFuture.Areas.CelebrityDeathPool.Controllers
         public ActionResult Index(int id)
         {
             int user_key = User.UserKey();
-            List<Player_Celebrity_Roster> player_celebrity = _playerCelebrityRepository.PlayerCelebrityGetListByPlayer(id, user_key);
+            List<Player_Celebrity_Roster> player_celebrity = _playerCelebrityRepository.PlayerCelebrityRosterGetList(id, user_key);
             return View(player_celebrity);
         }
 

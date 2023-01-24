@@ -23,6 +23,8 @@
     .b {
         font-weight: bold;
     }
+
+    .rank {font-size: .7em;}
 </style>
 
 
@@ -37,9 +39,9 @@ Number of Players: @Model.league_CDP.number_of_players
 Number of Celebs: @Model.league_CDP.number_of_celebrities
 <br />
 Average Celeb Age: @Model.league_CDP.average_age
-<br /><br />
+<br />
 Total Points Available: @Model.league_CDP.total_points_available<br />
-Total Points Wone: @Model.league_CDP.total_points_won
+Total Points Won: @Model.league_CDP.total_points_won
 <br />
 Number of Dead: @Model.league_CDP.number_of_deaths
 <br />
@@ -49,69 +51,65 @@ Number of Dead: @Model.league_CDP.number_of_deaths
 <p>@TempData["AllPlayerCelebrityUserMsg"]</p>
 
 
+        
+    @if (Model.player_roster_summaries.Count > 0)
+    {
+    <div class="container-fluid">
+         @{
+            var numberOfColsNeeded = 4;
+            var totalCounter = Model.player_roster_summaries.Count();
+            var itemCounter = 1;
+        }
+        @foreach (Player_Celebrity_Roster_Summary summary in Model.player_roster_summaries)
+        {
+  
 
-@if (Model.player_celebrities.Count > 0)
-{
-    <section title="My Celebrity Roster" style="width: 100%">
-        <table id="tblRoster" class="tblListView display">
-            <thead>
-                <tr>
-                    <th>Player</th>
-                    <th>Celebrity</th>
-                    <th>Type</th>
-                    <th>Birth Date</th>
-                    <th>Age</th>
-                    <th>Death Date</th>
-                    <th>Potential Points</th>
-                    <th>Points Won</th>
-                    <th>Action</th>
-                 </tr>
-            </thead>
-            <tbody>
+       if (itemCounter % numberOfColsNeeded == 1)
+       {
+        @:<div class="row">
+       }
+
+            <div class="col-sm-3">
+                <h2>@(summary.full_name) <span class="rank">(@(summary.player_rank))</span></h2>
+                <label>Celebrities:</label><span>@(summary.number_of_celebrities)</span><br />
+                <label>Avg Roster Age:</label><span>@(summary.average_age)</span><br />
+                <label>Deaths:</label><span>@(summary.number_of_deaths)</span><br />
+                <label>Points Won:</label><span>@(summary.total_points_won)</span><br />
+
                 @{
-                    var altRow = false;
-                            @foreach (Player_Celebrity_Roster player_celebrity in Model.player_celebrities)
-                    {
-                        //@if(player_celebrity.is_winner == false)
-                        //{
-                                <tr style="background-color:@(altRow ? "#fff" : "#E0EBEB");">
-                                    <td class="b">
-                                        @(player_celebrity.player_league.user.full_name)
-                                    </td>
-                                    <td class="b">
-                                        @(player_celebrity.celebrity.celebrity_name)
-                                    </td>
-                                    <td>
-                                        @(player_celebrity.celebrity.lk_celebrity_type.celebrity_type)
-                                    </td>
-                                    <td class="r">
-                                        @($"{player_celebrity.celebrity.birth_date:MM/dd/yyyy}")
-                                    </td>
-                                    <td class="c">
-                                        @(player_celebrity.celebrity.age)
-                                    </td>
-                                    <td class="r">
-                                        @($"{player_celebrity.celebrity.death_date:MM/dd/yyyy}")
-                                    </td>
-                                    <td class="c">
-                                        @(player_celebrity.celebrity.points)
-                                    </td>
-                                    <td class="c">
-                                        @( (player_celebrity.is_winner == true ?  player_celebrity.celebrity.points : 0) )
-                                    </td>
-                                    <td class="c">
-                                        <a class="nav-link text-dark" asp-area="CelebrityDeathPool" asp-controller="Celebrity" asp-action="Edit" asp-route-id="@(player_celebrity.player_celebrity_key)">Edit</a>
-                                    </td>
-                                </tr>
-                        //}
-                        altRow = !altRow;
-                    }
+                    List<Player_Celebrity_Roster> rosters = (from currentRosters
+                                                                    in Model.player_rosters
+                                                             where currentRosters.player_league_key == summary.player_league_key
+                                                             select currentRosters).ToList();
+
                 }
-            </tbody>
-        </table>
-    </section>
+
+                @foreach (Player_Celebrity_Roster celeb_roster in rosters)
+                {
+                <div>
+                    <h3>@(celeb_roster.celebrity.celebrity_name)</h3>
+                    <label>Celebrity Type:</label><span>@(celeb_roster.celebrity.lk_celebrity_type.celebrity_type)</span><br />
+                    <label>DOB:</label><span>@(celeb_roster.celebrity.birth_date)</span><br />
+                    <label>DOD:</label><span>@(celeb_roster.celebrity.death_date)</span><br />
+                    <label>Age:</label><span>@(celeb_roster.celebrity.age)</span><br />
+                    <label>Available Points:</label><span>@(celeb_roster.celebrity.points)</span><br />
+                    <label>Points Won:</label><span>@(celeb_roster.points_won)</span><br />
+                </div>
+                }
+            </div>
+
+       if ((itemCounter % numberOfColsNeeded == 0) || ((itemCounter) == totalCounter))
+       {
+        @: </div>
+       }  
+
+          itemCounter++;
+       }
+
+    </div>
+ 
 }
 else
 {
-    <p>No celebrity roster found.</p>
+    <p>No celebrity rosters found.</p>
 }

@@ -8,10 +8,10 @@ namespace AltFuture.Areas.CelebrityDeathPool.Controllers
 {
     [Area("CelebrityDeathPool")]
     [Authorize]
-    [Authorize(Policy = "CompetitionPlayerPolicy")]
+    [Authorize(Policy = "LeagueAdminPolicy")]
     public class CelebrityTypeController : Controller
     {
-
+         
         private LKCelebrityTypeRepository _lkCelebrityTypeRepository;
 
 

@@ -9,7 +9,7 @@ namespace AltFuture.Areas.CelebrityDeathPool.Controllers
 {
     [Area("CelebrityDeathPool")]
     [Authorize]
-    [Authorize(Policy = "CompetitionPlayerPolicy")]
+    [Authorize(Policy = "LeagueAdminPolicy")]
     public class CelebrityController : Controller
     {
         // private readonly IHttpContextAccessor _contextAccessor;

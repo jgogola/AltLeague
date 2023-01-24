@@ -34,11 +34,13 @@ namespace AltFuture.Areas.CelebrityDeathPool.Controllers
         public ActionResult Index(int id)
         {
             League.Models.ViewModels.League_CDP_ViewModel league_CDP = _leagueRepository.LeagueGetCDPSummary(id);
-           // List<Player_Celebrity> player_celebrities = _playerCelebrityRepository.PlayerCelebrityGetListByPlayer(id,0);
+            List<Player_Celebrity_Roster_Summary> player_roster_summeries = _playerCelebrityRepository.PlayerCelebrityRosterGetListSummary(id, 0);
+            List<Player_Celebrity_Roster> player_rosters = _playerCelebrityRepository.PlayerCelebrityRosterGetList(id, 0);
             LeagueAndCelebrityRosters leagueAndCelebrityRostesr = new LeagueAndCelebrityRosters
             {
                 league_CDP = league_CDP,
-                player_celebrities = new List<Player_Celebrity_Roster>()
+                player_roster_summaries = player_roster_summeries,
+                player_rosters = player_rosters
 
             };
             return View(leagueAndCelebrityRostesr);
