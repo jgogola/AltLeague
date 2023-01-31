@@ -1,6 +1,6 @@
-﻿using AltFuture.Areas.League.Models;
+﻿using AltLeague.Areas.League.Models;
 
-namespace AltFuture.Areas.League.Services
+namespace AltLeague.Areas.League.Services
 {
     public interface ILKLeagueTypeRepository : IDisposable
     {

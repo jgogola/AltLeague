@@ -1,7 +1,7 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
 
-namespace AltFuture.Models
+namespace AltLeague.Models
 {
     public class LK_User_Role_Model
     {

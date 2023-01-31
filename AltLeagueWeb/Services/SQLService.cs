@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using System.Data;
 
-namespace AltFuture.Services
+namespace AltLeague.Services
 {
     public class SQLService : ISQLService
     {

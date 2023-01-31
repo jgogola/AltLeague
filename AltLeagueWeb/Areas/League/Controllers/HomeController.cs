@@ -1,16 +1,16 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using AltFuture.Areas.League.Services;
-using AltFuture.Areas.League.Models;
-using AltFuture.Areas.League.Models.ViewModels;
+using AltLeague.Areas.League.Services;
+using AltLeague.Areas.League.Models;
+using AltLeague.Areas.League.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 
-namespace AltFutureWeb.Areas.Competitions.Controllers
+namespace AltLeagueWeb.Areas.Competitions.Controllers
 {
     [Area("League")]
     [Authorize]
     [Authorize(Policy = "LeaguePlayerPolicy")]
-    public class HomeController : AltFuture.Controllers.BaseController
+    public class HomeController : AltLeague.Controllers.BaseController
     {
 
         private LKLeagueTypeRepository _lkLeagueTypeRepository;
@@ -37,7 +37,7 @@ namespace AltFutureWeb.Areas.Competitions.Controllers
         public ActionResult Index()
         {
 
-            List<Player_League_Model> player_leagues = _playerLeagueRepository.PlayerLeagueGetList(User.UserKey(), 0, -1);
+            List<Player_League_Model> player_leagues = _playerLeagueRepository.PlayerLeagueGetList(User.UserKey(), 0, 0, -1);
             return View(player_leagues);
         }
 

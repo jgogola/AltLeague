@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AltFuture.Areas.CelebrityDeathPool.Models
+namespace AltLeague.Areas.CelebrityDeathPool.Models
 {
     public class LK_Celebrity_Type
     {

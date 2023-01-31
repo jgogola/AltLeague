@@ -1,7 +1,7 @@
-﻿using AltFuture.Models;
+﻿using AltLeague.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace AltFuture.Services
+namespace AltLeague.Services
 {
     public class AppUserRepository : IAppUserRepository
     {

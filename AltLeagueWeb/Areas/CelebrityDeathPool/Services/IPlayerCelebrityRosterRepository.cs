@@ -1,6 +1,6 @@
-﻿using AltFuture.Areas.CelebrityDeathPool.Models;
+﻿using AltLeague.Areas.CelebrityDeathPool.Models;
 
-namespace AltFuture.Areas.CelebrityDeathPool.Services
+namespace AltLeague.Areas.CelebrityDeathPool.Services
 {
     public interface IPlayerCelebrityRosterRepository : IDisposable
     {
@@ -9,6 +9,8 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
         List<Player_Celebrity_Roster> PlayerCelebrityRosterGetList(int league_key, int user_key = 0);
 
         List<Player_Celebrity_Roster_Summary> PlayerCelebrityRosterGetListSummary(int league_key, int user_key = 0);
+
+        List<Player_Celebrity_Roster_Summary> PlayerCelebrityRosterGetListSummaryByUser(int user_key);
 
 
         int PlayerCelebrityRosterAdd(Player_Celebrity_Roster player_celebrity_roster);

@@ -1,8 +1,8 @@
-﻿using AltFuture.Areas.League.Models;
-using AltFuture.Areas.CelebrityDeathPool.Models;
+﻿using AltLeague.Areas.League.Models;
+using AltLeague.Areas.CelebrityDeathPool.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace AltFuture.Areas.CelebrityDeathPool.Services
+namespace AltLeague.Areas.CelebrityDeathPool.Services
 {
     public class PlayerCelebrityRosterRepository : IPlayerCelebrityRosterRepository
     {
@@ -164,6 +164,43 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
                     total_points_won = (int)dr["total_points_won"],
                     player_rank = (string)dr["player_rank"],
                     player_rank_int = (int)dr["player_rank_int"]
+                };
+
+                roster_summaries.Add(roster_summary);
+            }
+
+            return roster_summaries;
+
+        }
+
+        public List<Player_Celebrity_Roster_Summary> PlayerCelebrityRosterGetListSummaryByUser(int user_key)
+        {
+            DataTable dt = _db.GetDT("cdp.usp_Player_Celebrity_Roster_Get_List_Summary_by_User", new() { user_key });
+            List<Player_Celebrity_Roster_Summary> roster_summaries = new List<Player_Celebrity_Roster_Summary>();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+
+
+                Player_Celebrity_Roster_Summary roster_summary = new Player_Celebrity_Roster_Summary
+                {
+                    player_league_key = (int)dr["player_league_key"],
+                    user_key = (int)dr["user_key"],
+                    full_name = (string)dr["full_name"],
+                    number_of_celebrities = (int)dr["number_of_celebrities"],
+                    average_age = (int)dr["average_age"],
+                    number_of_deaths = (int)dr["number_of_deaths"],
+                    total_points_won = (int)dr["total_points_won"],
+                    player_rank = (string)dr["player_rank"],
+                    player_rank_int = (int)dr["player_rank_int"],
+                    league_key = (int)dr["league_key"],
+                    league_title = (string)dr["league_title"],
+                    is_active_league = (Boolean)dr["is_active_league"],
+                    league_start_date = (DateTime)dr["league_start_date"],
+                    league_end_date = (DateTime)dr["league_end_date"],
+                    dues_collected = (Boolean)dr["dues_collected"],
+                    number_of_players = (int)dr["number_of_players"]
+
                 };
 
                 roster_summaries.Add(roster_summary);

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AltFuture.Models.ViewModels
+namespace AltLeague.Models.ViewModels
 {
     public class CredentialViewModel
     {

@@ -6,14 +6,14 @@ using Newtonsoft;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.IO;
-using AltFuture.Models.ViewModels;
+using AltLeague.Models.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.CodeAnalysis.Scripting;
 using System.Security.Claims;
 
-namespace AltFuture.Controllers
+namespace AltLeague.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
-namespace AltFuture.Areas.League.Models
+namespace AltLeague.Areas.League.Models
 {
     public class Player_League_Model
     {

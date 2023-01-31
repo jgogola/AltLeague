@@ -1,7 +1,7 @@
 ﻿
 using System.Security.Claims;
 
-namespace AltFuture.Models.Extensions
+namespace AltLeague.Models.Extensions
 {
     public static class ClaimsPrincipalExtensions
     {

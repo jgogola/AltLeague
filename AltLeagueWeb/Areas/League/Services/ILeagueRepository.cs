@@ -1,7 +1,7 @@
-﻿using AltFuture.Areas.League.Models;
-using AltFuture.Areas.League.Models.ViewModels;
+﻿using AltLeague.Areas.League.Models;
+using AltLeague.Areas.League.Models.ViewModels;
 
-namespace AltFuture.Areas.League.Services
+namespace AltLeague.Areas.League.Services
 {
     public interface ILeagueRepository : IDisposable
     {

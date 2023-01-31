@@ -43,6 +43,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2VsZWJyaXR5RGVhdGhQb29sXFZpZXdzXENlbGVicml0eVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/_Dev/AltLeague/AltLeagueWeb/Areas/CelebrityDeathPool/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2VsZWJyaXR5RGVhdGhQb29sXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/_Dev/AltLeague/AltLeagueWeb/Areas/CelebrityDeathPool/Views/MyCelebrityRoster/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2VsZWJyaXR5RGVhdGhQb29sXFZpZXdzXE15Q2VsZWJyaXR5Um9zdGVyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -102,3 +106,11 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/_Dev/AltLeague/AltLeagueWeb/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-q3o92dt6ok
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Views/Shared/_NewLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OZXdMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-z07vv0cs76
+
+[C:/_Dev/AltLeague/AltLeagueWeb/Views/Shared/_NewLayout2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OZXdMYXlvdXQyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-wc77c2oenr

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AltFuture.Areas.League.Models
+namespace AltLeague.Areas.League.Models
 {
     public class LK_League_Type_Model
     {

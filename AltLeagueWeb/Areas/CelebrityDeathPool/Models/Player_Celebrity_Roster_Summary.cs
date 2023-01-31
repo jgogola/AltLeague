@@ -1,8 +1,8 @@
-﻿using AltFuture.Areas.League.Models;
+﻿using AltLeague.Areas.League.Models;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
 
-namespace AltFuture.Areas.CelebrityDeathPool.Models
+namespace AltLeague.Areas.CelebrityDeathPool.Models
 {
     public class Player_Celebrity_Roster_Summary
     {
@@ -19,6 +19,19 @@ namespace AltFuture.Areas.CelebrityDeathPool.Models
         public string player_rank { get; set; } = "0";
         public int player_rank_int { get; set; } = 0;
 
-       
+
+        public int league_key { get; set; } = 0;
+        public string league_title { get; set; } = "";
+
+        public Boolean is_active_league { get; set; } = true;
+
+        public DateTime league_start_date { get; set; } = new DateTime();
+
+        public DateTime league_end_date { get; set; } = new DateTime();
+
+        public Boolean dues_collected { get; set; } = false;
+
+        public int number_of_players { get; set; } = 0;
+
     }
 }

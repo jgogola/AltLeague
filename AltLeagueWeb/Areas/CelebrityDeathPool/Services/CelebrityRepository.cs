@@ -1,7 +1,7 @@
-﻿using AltFuture.Areas.CelebrityDeathPool.Models;
+﻿using AltLeague.Areas.CelebrityDeathPool.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace AltFuture.Areas.CelebrityDeathPool.Services
+namespace AltLeague.Areas.CelebrityDeathPool.Services
 {
     public class CelebrityRepository : ICelebrityRepository
     {

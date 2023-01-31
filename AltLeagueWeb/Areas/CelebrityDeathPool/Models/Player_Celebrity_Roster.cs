@@ -1,8 +1,8 @@
-﻿using AltFuture.Areas.League.Models;
+﻿using AltLeague.Areas.League.Models;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
 
-namespace AltFuture.Areas.CelebrityDeathPool.Models
+namespace AltLeague.Areas.CelebrityDeathPool.Models
 {
     public class Player_Celebrity_Roster
     {

@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 
-namespace AltFuture.Models
+namespace AltLeague.Models
 {
     public class App_User_Model
     {

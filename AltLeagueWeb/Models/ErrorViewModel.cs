@@ -1,4 +1,4 @@
-namespace AltFuture.Models
+namespace AltLeague.Models
 {
     public class ErrorViewModel
     {

@@ -1,8 +1,8 @@
-﻿using AltFuture.Areas.League.Models;
-using AltFuture.Areas.League.Services;
+﻿using AltLeague.Areas.League.Models;
+using AltLeague.Areas.League.Services;
 using System.ComponentModel.DataAnnotations;
 
-namespace AltFuture.Areas.League.Services
+namespace AltLeague.Areas.League.Services
 {
     public class PlayerLeagueRepository : IPlayerLeagueRepository
     {
@@ -64,9 +64,9 @@ namespace AltFuture.Areas.League.Services
             return new Player_League_Model();
         }
 
-        public List<Player_League_Model> PlayerLeagueGetList(int user_key = 0, int league_key  = 0, int is_active_league = -1)
+        public List<Player_League_Model> PlayerLeagueGetList(int user_key = 0, int lk_league_type_key = 0,  int league_key  = 0, int is_active_league = -1)
         {
-            DataTable dt = _db.GetDT("leag.usp_Player_League_Get_List", new List<Object> {user_key, league_key, is_active_league});
+            DataTable dt = _db.GetDT("leag.usp_Player_League_Get_List", new List<Object> {user_key, lk_league_type_key, league_key, is_active_league});
             List<Player_League_Model> player_leagues = new List<Player_League_Model>();
 
             foreach (DataRow dr in dt.Rows)

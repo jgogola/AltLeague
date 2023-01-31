@@ -1,8 +1,8 @@
-﻿using AltFuture.Areas.League.Models;
-using AltFuture.Areas.League.Services;
+﻿using AltLeague.Areas.League.Models;
+using AltLeague.Areas.League.Services;
 using System.ComponentModel.DataAnnotations;
 
-namespace AltFuture.Areas.League.Services
+namespace AltLeague.Areas.League.Services
 {
     public class LKLeagueTypeRepository : ILKLeagueTypeRepository
     {

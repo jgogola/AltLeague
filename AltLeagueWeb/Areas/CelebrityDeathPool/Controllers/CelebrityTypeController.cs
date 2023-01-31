@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using AltFuture.Areas.CelebrityDeathPool.Models;
-using AltFuture.Areas.CelebrityDeathPool.Services;
+using AltLeague.Areas.CelebrityDeathPool.Models;
+using AltLeague.Areas.CelebrityDeathPool.Services;
 
-namespace AltFuture.Areas.CelebrityDeathPool.Controllers
+namespace AltLeague.Areas.CelebrityDeathPool.Controllers
 {
     [Area("CelebrityDeathPool")]
     [Authorize]

@@ -6,7 +6,7 @@
     <title>@ViewData["Title"] - RIVALRY</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/AltFuture.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AltLeague.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
@@ -21,13 +21,16 @@
                     <ul class="navbar-nav flex-grow-1">
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="League" asp-controller="Home" asp-action="Index">Celebrity Death Pool</a>
+                            <a class="nav-link text-dark" asp-area="CelebrityDeathPool" asp-controller="Home" asp-action="Index">Celebrity Death Pool</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Football Pool</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Survivor Pool</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="League" asp-controller="Home" asp-action="Index">All My Leagues</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Site Admin</a>

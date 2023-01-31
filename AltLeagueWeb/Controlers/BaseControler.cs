@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using AltFuture.Services;
+using AltLeague.Services;
 
-namespace AltFuture.Controllers
+namespace AltLeague.Controllers
 {
      
     public class BaseController : Controller

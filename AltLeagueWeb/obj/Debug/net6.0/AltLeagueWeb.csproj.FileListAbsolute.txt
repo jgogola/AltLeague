@@ -527,3 +527,5 @@ C:\_Dev\AltLeague\AltLeagueWeb\obj\Debug\net6.0\refint\AltLeagueWeb.dll
 C:\_Dev\AltLeague\AltLeagueWeb\obj\Debug\net6.0\AltLeagueWeb.pdb
 C:\_Dev\AltLeague\AltLeagueWeb\obj\Debug\net6.0\AltLeagueWeb.genruntimeconfig.cache
 C:\_Dev\AltLeague\AltLeagueWeb\obj\Debug\net6.0\ref\AltLeagueWeb.dll
+C:\_Dev\AltLeague\AltLeagueWeb\obj\Debug\net6.0\scopedcss\Views\Shared\_NewLayout.cshtml.rz.scp.css
+C:\_Dev\AltLeague\AltLeagueWeb\obj\Debug\net6.0\scopedcss\Views\Shared\_NewLayout2.cshtml.rz.scp.css

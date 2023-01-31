@@ -1,0 +1,42 @@
+﻿@model List<Player_Celebrity_Roster_Summary>
+
+@{
+    ViewData["Title"] = "My Celebrity Death Pool Leagues";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+    <div class="container-fluid">
+         @{
+            var numberOfColsNeeded = 4;
+            var totalCounter = Model.Count();
+            var itemCounter = 1;
+        }
+        @foreach (Player_Celebrity_Roster_Summary player_roster_summary in Model)
+        {
+  
+
+       if (itemCounter % numberOfColsNeeded == 1)
+       {
+        @:<div class="row">
+       }
+
+            <div class="col-sm-3">
+                <h2><a asp-area="CelebrityDeathPool" asp-controller="AllCelebrityRosters" asp-action="Index" asp-route-id="@(player_roster_summary.league_key)">@(player_roster_summary.league_title)</a> </h2>
+                <label>Rank:</label><span class="rank">@(player_roster_summary.player_rank) of @(player_roster_summary.number_of_players)</span><br />
+                <label>Celebrities:</label><span>@(player_roster_summary.number_of_celebrities)</span><br />
+                <label>Avg Roster Age:</label><span>@(player_roster_summary.average_age)</span><br />
+                <label>Deaths:</label><span>@(player_roster_summary.number_of_deaths)</span><br />
+                <label>Points Won:</label><span>@(player_roster_summary.total_points_won)</span><br />
+
+            </div>
+
+       if ((itemCounter % numberOfColsNeeded == 0) || ((itemCounter) == totalCounter))
+       {
+        @: </div>
+       }  
+
+          itemCounter++;
+       }
+
+    </div>

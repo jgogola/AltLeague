@@ -1,11 +1,11 @@
 global using System.Data;
-global using AltFuture.Models;
-global using AltFuture.Models.Extensions;
-global using AltFuture.Services;
+global using AltLeague.Models;
+global using AltLeague.Models.Extensions;
+global using AltLeague.Services;
 
 using System.Security.Claims;
-using AltFuture.Areas.CelebrityDeathPool.Services;
-using AltFuture.Areas.League.Services;
+using AltLeague.Areas.CelebrityDeathPool.Services;
+using AltLeague.Areas.League.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

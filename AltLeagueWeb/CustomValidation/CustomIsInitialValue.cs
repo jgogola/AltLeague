@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;  
 //using System.Web.Mvc; 
 
-namespace AltFuture.CustomValidation
+namespace AltLeague.CustomValidation
 {
     public class CustomIsInitialValue : ValidationAttribute
     {

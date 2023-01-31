@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace AltFuture.Services
+namespace AltLeague.Services
 {
     public interface ISQLService
     {

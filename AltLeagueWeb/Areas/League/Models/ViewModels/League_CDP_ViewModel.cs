@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AltFuture.Areas.League.Models.ViewModels
+namespace AltLeague.Areas.League.Models.ViewModels
 {
     public class League_CDP_ViewModel
     {

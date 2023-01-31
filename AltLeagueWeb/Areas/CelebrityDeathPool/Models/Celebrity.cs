@@ -1,9 +1,9 @@
-﻿using AltFuture.CustomValidation;
+﻿using AltLeague.CustomValidation;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace AltFuture.Areas.CelebrityDeathPool.Models
+namespace AltLeague.Areas.CelebrityDeathPool.Models
 {
     public class Celebrity
     {

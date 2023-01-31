@@ -1,7 +1,7 @@
-﻿using AltFuture.Models;
+﻿using AltLeague.Models;
 
 
-namespace AltFuture.Services
+namespace AltLeague.Services
 {
     public interface IAppUserRepository : IDisposable
     {
