@@ -3,37 +3,60 @@
     ViewData["Title"] = "Home Page";
 }
 
-<style>
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="hero-container">
+        <h1>Welcome to RIVALRY</h1>
 
-</style>
+    </div>
+</section><!-- #hero -->
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to RIVALRY</h1>
-    
-    <div class="container-fluid">
+<!-- ======= Why Us Section ======= -->
+<section id="why-us" class="why-us section-bg">
+    <div class="container">
+
         <div class="row">
-            <div class="col-sm-4">
-                <div class="p-3 border bg-light">
-                    Football Pool
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="card">
+                    <img src="assets/img/why-us-1.jpg" class="card-img-top" alt="...">
+                    <div class="card-icon">
+                        <i class="bx bx-book-reader"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><a class="nav-link text-dark" asp-area="FootballPool" asp-controller="Home" asp-action="Index">NFL Football Pool</a></h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="p-3 border bg-light">
-                    <a class="nav-link text-dark" asp-area="CelebrityDeathPool" asp-controller="Home" asp-action="Index">Celebrity Death Pool</a>
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="card">
+                    <img src="assets/img/why-us-2.jpg" class="card-img-top" alt="...">
+                    <div class="card-icon">
+                        <i class="bx bx-calendar-edit"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><a class="nav-link text-dark" asp-area="CelebrityDeathPool" asp-controller="Home" asp-action="Index">Celebrity Death Pool</a></h5>
+                        <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="p-3 border bg-light">
-                    Survivor Pool
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="card">
+                    <img src="assets/img/why-us-3.jpg" class="card-img-top" alt="...">
+                    <div class="card-icon">
+                        <i class="bx bx-landscape"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><a class="nav-link text-dark" asp-area="SurvivorPool" asp-controller="Home" asp-action="Index">Survivor Pool</a></h5>
+                        <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet. </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <br /><br />
 
-    <p>User Name: @User.UserName()</p>
-    <p>User Role: @User.UserRoleName()</p>
+    </div>
+</section><!-- End Why Us Section -->
+
 
 
 </div>
