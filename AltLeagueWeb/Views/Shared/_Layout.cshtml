@@ -4,59 +4,106 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - RIVALRY</title>
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+
+    <!-- =======================================================
+    * Template Name: Siimple - v4.9.0
+    * Template URL: https://bootstrapmade.com/free-bootstrap-landing-page/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/boxicons/css/boxicons.min.css" />
+
+    
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AltLeague.styles.css" asp-append-version="true" />
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RIVALS</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+<body >
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="CelebrityDeathPool" asp-controller="Home" asp-action="Index">Celebrity Death Pool</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Football Pool</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Survivor Pool</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="League" asp-controller="Home" asp-action="Index">All My Leagues</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Site Admin</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
-                        </li>
-                    </ul>
-                </div>
+
+
+    <!-- ======= Header ======= -->
+    <header id="header">
+        <div class="container-fluid">
+
+            <div class="logo">
+                <h1><a href="index.html">RIVALRY</a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+
+            <button type="button" class="nav-toggle"><i class="bx bx-menu"></i></button>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="active"><a href="#header" class="scrollto">Home</a></li>
+                    <li><a href="#about" class="scrollto">About Us</a></li>
+                    <li><a href="#why-us" class="scrollto">Why Us</a></li>
+                    <li class="drop-down">
+                        <a href="">Drop Down</a>
+                        <ul>
+                            <li><a href="#">Drop Down 1</a></li>
+                            <li class="drop-down">
+                                <a href="#">Drop Down 2</a>
+                                <ul>
+                                    <li><a href="#">Deep Drop Down 1</a></li>
+                                    <li><a href="#">Deep Drop Down 2</a></li>
+                                    <li><a href="#">Deep Drop Down 3</a></li>
+                                    <li><a href="#">Deep Drop Down 4</a></li>
+                                    <li><a href="#">Deep Drop Down 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Drop Down 3</a></li>
+                            <li><a href="#">Drop Down 4</a></li>
+                            <li><a href="#">Drop Down 5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact" class="scrollto">Contact Us</a></li>
+                </ul>
+            </nav><!-- .nav-menu -->
+
+        </div>
+    </header><!-- End #header -->
+
+    <div class="view" >
+
+        <!-- ======= Main ======= -->
+        <main role="main" id="main">
             @RenderBody()
-        </main>
+        </main><!-- End #main -->
+
     </div>
 
-    <footer class="border-top footer text-muted">
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
         <div class="container">
-            &copy; 2022 - AltLeague - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="copyright">
+                &copy; Copyright <strong><span>RIVALRY</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-landing-page/ -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                <a href="https://www.freepik.com/free-photo/3d-grunge-room-interior-with-spotlight-smoky-atmosphere-background_6038271.htm#query=website%20background&position=32&from_view=keyword">Image by kjpargeter</a> on Freepik
+            </div>
         </div>
-    </footer>
+    </footer><!-- End #footer -->
+   
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

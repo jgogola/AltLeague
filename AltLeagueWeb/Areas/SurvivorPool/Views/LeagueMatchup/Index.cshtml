@@ -1,0 +1,245 @@
+﻿@model LeagueAndPlayerRostersViewModel
+@{
+    ViewData["Title"] = "All Survivor Rosters";
+}
+
+<style>
+
+    .league-info {
+        color: #fff;
+        background-color: rgb(0,0,0,.3);
+        padding: 8px;
+        position: relative;
+    }
+
+    .page-exit {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        height: 40px;
+        width: 40px;
+        background-color: #333;
+        color: red;
+        text-align: center;
+        font-size: 1.7em;
+    }
+
+    .player-card {
+        background: none;
+        border: none;
+        color: #fff;
+    }
+
+
+    .player-row {
+                /*background-color: rgb(214, 213, 168, .7);*/
+    /*	padding: 8px;*/
+    }
+
+    .rank {font-size: .7em;}
+
+
+	.contestant-card {
+		font-size: .7em;
+	    width: 7rem;  
+	}
+	
+	.contestant-card h5 {
+	    font-size: .9rem;
+
+	}
+
+    .contestant-winner {
+        background-color: #FCF55F;
+    }
+	
+    .contestant-voted-out {
+        background-color: #333;
+        color: #fff;
+    }
+    .card-tribe {
+	    padding: 0;
+	    text-align: center;
+	
+    }
+
+    .tribeA {
+        background-color: red;
+    }
+
+    .contestant-snuffed {
+        background-color: rgb(0,0,0,.4);
+        font-size: 1.6em;
+        font-weight: bold;
+        color: rgb(255,255,255,.5);
+    }
+
+    .contestant-win {
+        font-size: 1.6em;
+        font-weight: bold;
+        color: rgb(252, 245, 95);
+    }
+
+    .winner-text {
+        text-transform: uppercase;
+        position: absolute;
+        top: 40%;
+        left: 0;
+        background-color: rgb(0,0,0,.2);
+        width: 100%;
+        text-align: center;
+        line-height: 1em;
+    }
+
+    .rotate {
+        text-transform: uppercase;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-30deg);
+    }
+
+    .card {
+        height: 100%;
+    }
+
+
+
+</style>
+
+
+<div class="container text-center league-info">
+    <div class="page-exit">
+        <a asp-area="SurvivorPool" asp-controller="Home" asp-action="Index">X</a>
+    </div>
+    <h1>@Model.leagueSummary.league_title</h1>
+    Dates: @($"{@Model.leagueSummary.league_start_date: MM/dd/yyyy}") / @($"{@Model.leagueSummary.league_end_date: MM/dd/yyyy}")
+    <br />
+    <label asp-for="@Model.leagueSummary.is_active_league"></label>
+    @(@Model.leagueSummary.is_active_league ? "Active" : "Closed")
+    <br />
+    Number of Players: @Model.leagueSummary.number_of_players
+    <br />
+    Number of Active Contestants: @Model.leagueSummary.number_of_active_contestants out of @Model.leagueSummary.number_of_contestants
+
+    <br />
+
+    @if (Model.leagueSummary.has_winner == false)
+    {
+        @: Next Episode: @Model.leagueSummary.next_episode_num_title<br />
+        @: Air Date: @Model.leagueSummary.next_air_date<br />
+           
+    }
+
+    @if(Model.leagueSummary.has_winner)
+    {
+       @: Winning Player: @Model.leagueSummary.winning_player <br />
+       @: Winning Contestant: @Model.leagueSummary.winning_contestant
+
+    }
+</div>
+<br />
+
+
+
+<p>@TempData["AllPlayerCelebrityUserMsg"]</p>
+
+
+        
+    @if (Model.playerRosterSummary.Count > 0)
+    {
+    <div class="container" style="height: 100%;">
+         @{
+            var numberOfColsNeeded = 3;
+            var totalCounter = Model.playerRosterSummary.Count();
+            var itemCounter = 1;
+        }
+        @foreach (PlayerRosterSummaryViewModel summary in Model.playerRosterSummary)
+        {
+  
+
+               <div class="row row-cols-auto g-0 mb-4 player-row gx-4" style="background-color: transparent;">
+
+				<div class="col-sm-12 col-md-3">
+				  <div class="card player-card" style="background-color: rgb(0,0,0,.5);">
+					<div class="card-body p-2">
+					  <h5 class="card-title">@summary.full_name</h5>
+					  <p class="card-text">
+					  <span class="rank">(@summary.player_rank)</span>
+                      <label>Active Contestants:</label><span>@summary.number_of_active_contestants of @summary.number_of_contestants </span><br />
+					  </p>
+					</div>
+				  </div>				
+				</div>
+
+                
+                @{
+             
+                List<PlayerRosterViewModel> playerRosters = (from currentRosters
+                                                                in Model.playerRoster
+                                                            where currentRosters.player_league_key == summary.player_league_key
+                                                            select currentRosters).ToList();
+                }
+               
+
+                @foreach (PlayerRosterViewModel roster in playerRosters)
+                {
+                 
+                    string? classContestantWinner = roster.is_winner ? "contestant-winner" : null;
+                    string? classContestantVotedOut = roster.is_voted_out ? "contestant-voted-out" : null;
+                   
+
+				<div class="col-auto">
+
+                        <div class="card contestant-card @classContestantWinner @classContestantVotedOut"  >
+                        <img src="@roster.thumb_url" alt="picture of @roster.contestant_name" class="card-img-top img-thumbnail" alt="..." >
+
+                        @if(roster.is_voted_out)
+                        {
+                        <div class="card-img-overlay contestant-snuffed">
+                           <div class="rotate">Snuffed!</div>
+                        </div>
+                        }
+
+                        @if(roster.is_winner)
+                        {
+                        <div class="card-img-overlay contestant-win">
+                           <div class="winner-text" >Winner!</div>
+                        </div>
+                        }
+
+                        <div class="card-body p-2 ">
+					      <h5 class="card-title">@roster.contestant_name</h5>
+					      <p class="card-text">
+                              <label>Age:</label><span>@roster.age</span><br />
+                              <label>Placement:</label><span>@roster.placement</span><br />
+					      </p>
+					    </div>
+
+					    <div class="card-footer card-tribe">
+                                <div style="background-color: @roster.tribe_bg_color; color: @roster.tribe_color;">@roster.tribe_name</div>
+                            @if(@roster.tribe_name_merge != "")
+                            {
+                               @:<div class="rounded-bottom" style="background-color: @roster.tribe_bg_color_merge; color: @roster.tribe_color_merge;">@roster.tribe_name_merge</div>
+                            } else {
+                                    @:<div class="rounded-bottom" style="background-color: #666; color: #fff;">---</div>
+                            }
+                        </div>
+                    </div>
+				</div>
+
+
+                }
+
+
+       </div>
+          itemCounter++;
+       }
+
+    </div>
+ 
+}
+else
+{
+    <p>No celebrity rosters found.</p>
+}

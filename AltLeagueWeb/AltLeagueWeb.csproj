@@ -40,10 +40,7 @@
     <Folder Include="Areas\FootballPool\Data\" />
     <Folder Include="Areas\FootballPool\Models\" />
     <Folder Include="Areas\FootballPool\Views\" />
-    <Folder Include="Areas\SurvivorPool\Controllers\" />
     <Folder Include="Areas\SurvivorPool\Data\" />
-    <Folder Include="Areas\SurvivorPool\Models\" />
-    <Folder Include="Areas\SurvivorPool\Views\" />
     <Folder Include="wwwroot\files\" />
   </ItemGroup>
 

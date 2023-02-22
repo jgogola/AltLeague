@@ -6,6 +6,7 @@ global using AltLeague.Services;
 using System.Security.Claims;
 using AltLeague.Areas.CelebrityDeathPool.Services;
 using AltLeague.Areas.League.Services;
+using AltLeague.Areas.SurvivorPool.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,8 @@ builder.Services.AddScoped<ILKCelebrityTypeRepository, LKCelebrityTypeRepository
 builder.Services.AddScoped<ICelebrityRepository, CelebrityRepository>();
 
 builder.Services.AddScoped<IPlayerCelebrityRosterRepository, PlayerCelebrityRosterRepository > ();
+
+builder.Services.AddScoped<AltLeague.Areas.SurvivorPool.Services.IPlayerRosterRepository, AltLeague.Areas.SurvivorPool.Services.PlayerRosterRepository>();
 
 
 builder.Services.AddSession(options =>

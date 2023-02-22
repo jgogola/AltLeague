@@ -1,0 +1,54 @@
+﻿@model List<PlayerRosterSummaryViewModel>
+
+@{
+    ViewData["Title"] = "My Survivor Pool Leagues";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+    <div class="container">
+         @{
+            var numberOfColsNeeded = 4;
+            var totalCounter = Model.Count();
+            var itemCounter = 1;
+        }
+        @foreach (PlayerRosterSummaryViewModel playerRosteSummary in Model)
+        {
+  
+
+       if (itemCounter % numberOfColsNeeded == 1)
+       {
+        @:<div class="row">
+       }
+
+        if (playerRosteSummary.has_winner)
+        {
+            <div class="col-sm-3">
+                <h2><a asp-area="SurvivorPool" asp-controller="LeagueMatchup" asp-action="Index" asp-route-id="@playerRosteSummary.league_key">@playerRosteSummary.league_title</a> </h2>
+                <label>My Result:</label> <span class="rank">@playerRosteSummary.player_rank</span><br />
+                <label>Number of Players:</label> <span>@playerRosteSummary.number_of_players</span><br />
+                <label>Winning Player:</label> <span>@playerRosteSummary.winning_player</span><br />
+                <label>Winning Contestant:</label> <span>@playerRosteSummary.winning_contestant</span><br />
+            </div>
+        }else{
+
+            <div class="col-sm-3">
+                <h2><a asp-area="SurvivorPool" asp-controller="LeagueMatchup" asp-action="Index" asp-route-id="@playerRosteSummary.league_key">@playerRosteSummary.league_title</a> </h2>
+                <label>My Rank:</label> <span class="rank">@playerRosteSummary.player_rank of @playerRosteSummary.number_of_players</span><br />
+                <label>Conestents Still In:</label> <span>@playerRosteSummary.number_of_active_contestants out of @playerRosteSummary.number_of_contestants</span><br />
+                <label>Next Episode:</label> <span>@playerRosteSummary.next_episode_num_title</span><br />
+                <label>Air Date:</label> <span>@playerRosteSummary.next_air_date</span><br />
+            </div>
+        }
+
+
+
+       if ((itemCounter % numberOfColsNeeded == 0) || ((itemCounter) == totalCounter))
+       {
+        @: </div>
+       }  
+
+          itemCounter++;
+       }
+
+    </div>

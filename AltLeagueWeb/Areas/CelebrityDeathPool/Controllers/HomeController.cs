@@ -4,7 +4,7 @@ using AltLeague.Areas.CelebrityDeathPool.Models.ViewModels;
 using AltLeague.Areas.CelebrityDeathPool.Models;
 using AltLeague.Areas.CelebrityDeathPool.Services;
 
-namespace AltLeagueWeb.Areas.CelebrityDeathPool.Controllers
+namespace AltLeague.Areas.CelebrityDeathPool.Controllers
 {
     [Area("CelebrityDeathPool")]
     [Authorize]

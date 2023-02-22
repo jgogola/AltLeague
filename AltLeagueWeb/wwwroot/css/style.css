@@ -49,9 +49,31 @@ header,
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
-  color: #444444;
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+    /*background-image: url('/img/survivor/survivor-wallpaper.jpg');*/ /*url('/img/3d-grunge-room-interior-with-spotlight-smoky-atmosphere-background.jpg'); */
+    /*background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;*/
+
 }
+
+    body::after {
+        content: "";
+        background-image: url('/img/survivor/survivor-wallpaper.jpg'); /*url('/img/3d-grunge-room-interior-with-spotlight-smoky-atmosphere-background.jpg'); */
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        opacity: 0.75;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: fixed;
+        z-index: -1;
+    }
 
 a {
   text-decoration: none;
@@ -94,7 +116,7 @@ h6,
 
 #header .logo h1 a,
 #header .logo h1 a:hover {
-  color: #fff;
+  color: #666;
   text-decoration: none;
 }
 

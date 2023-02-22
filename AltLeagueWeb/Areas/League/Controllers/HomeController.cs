@@ -5,7 +5,7 @@ using AltLeague.Areas.League.Models;
 using AltLeague.Areas.League.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 
-namespace AltLeagueWeb.Areas.Competitions.Controllers
+namespace AltLeague.Areas.Competitions.Controllers
 {
     [Area("League")]
     [Authorize]
